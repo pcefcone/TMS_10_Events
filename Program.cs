@@ -11,6 +11,7 @@ internal class Program
         operations.Subtraction += OperationSubstraction;
         operations.Modulus += OperationModulus;
         operations.Error += OperationError;
+        operations.Exit += OperationExit;
         double variable1;
         double variable2;
         bool isTrue = true;
@@ -26,11 +27,11 @@ internal class Program
             if (trueVariable1 && trueVariable1)
             {
                 Console.WriteLine("Choose operation:" +
-                    "+ -> to addition," +
-                    "- -> to division," +
-                    "* -> to multiplication," +
-                    "/ -> to substraction," +
-                    "% -> to modulus," +
+                    "\n+ -> to addition," +
+                    "\n- -> to division," +
+                    "\n* -> to multiplication," +
+                    "\n/ -> to substraction," +
+                    "\n% -> to modulus," +
                     "! -> to exit program" +
                     "another symbol, letter or number -> to error=)");
                 string operation = Console.ReadLine();
@@ -47,6 +48,12 @@ internal class Program
         }
 
     }
+    public static void OperationExit(object obj)
+    {
+        Environment.Exit(0);
+    }
+
+
     private static void OperationAddition(object obj)
     {
         var operations = (Operations)obj;
@@ -79,6 +86,6 @@ internal class Program
     }
     public static void OperationError()
     {      
-        Console.WriteLine("Error!");
+        Console.WriteLine("Error! Please try again.");
     }
 }
