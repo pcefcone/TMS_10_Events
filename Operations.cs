@@ -108,8 +108,6 @@ namespace TMS_10_Events
         {
             res = variable1 % variable2;
         }
-
-        
-        
+    
     }
 }
